@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawbook</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="lawbook-container" class="hidden">
+        <!-- Книга -->
+        <div id="book" class="book">
+            <!-- Закладки/вкладки -->
+            <div id="bookmarks" class="bookmarks">
+                <!-- Вкладки генерируются динамически -->
+            </div>
+            
+            <!-- Левая страница -->
+            <div class="page left-page">
+                <div class="page-content" id="left-page-content">
+                    <!-- Содержимое оглавления -->
+                </div>
+                <div class="page-number" id="left-page-number">1</div>
+            </div>
+            
+            <!-- Корешок книги -->
+            <div class="book-spine"></div>
+            
+            <!-- Правая страница -->
+            <div class="page right-page">
+                <div class="page-content" id="right-page-content">
+                    <!-- Основное содержимое -->
+                </div>
+                <div class="page-number" id="right-page-number">2</div>
+            </div>
+            
+            <!-- Навигация страниц -->
+            <button class="nav-btn prev-btn" id="prevPage">◄</button>
+            <button class="nav-btn next-btn" id="nextPage">►</button>
+        </div>
+        
+        <!-- Панель управления -->
+        <div id="controls" class="controls">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Поиск...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+            
+            <div class="control-buttons">
+                <button id="editModeBtn" class="control-btn hidden">✏️ Редактировать</button>
+                <button id="closeBtn" class="control-btn close-btn">✕ Закрыть</button>
+            </div>
+        </div>
+        
+        <!-- Режим редактирования -->
+        <div id="editPanel" class="edit-panel hidden">
+            <h3>Режим редактирования</h3>
+            <div class="edit-actions">
+                <button id="addChapterBtn" class="edit-btn">+ Глава</button>
+                <button id="addArticleBtn" class="edit-btn">+ Статья</button>
+                <button id="addPointBtn" class="edit-btn">+ Пункт</button>
+            </div>
+            <button id="exitEditBtn" class="edit-btn exit-btn">Выйти из редактирования</button>
+        </div>
+        
+        <!-- Модальное окно -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h3 id="modalTitle">Добавить</h3>
+                <form id="modalForm">
+                    <div id="modalFields">
+                        <!-- Поля генерируются динамически -->
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="submit" class="modal-btn save-btn">Сохранить</button>
+                        <button type="button" id="modalCancel" class="modal-btn cancel-btn">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Результаты поиска -->
+        <div id="searchResults" class="search-results hidden">
+            <h4>Результаты поиска</h4>
+            <div id="searchResultsList"></div>
+            <button id="closeSearchResults" class="close-search-btn">Закрыть</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
